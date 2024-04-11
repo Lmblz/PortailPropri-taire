@@ -3,7 +3,7 @@
         :items-length="items.length" :loading="loading" :search="search" item-value="name" @update:options="loadItems">
         <template v-slot:top>
             <v-text-field v-model="name" class="ma-2" density="compact" placeholder="Rechercher un produit"
-                hide-details />
+                variant="outlined" hide-details />
         </template>
     </v-data-table-server>
 </template>

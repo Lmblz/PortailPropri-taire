@@ -11,12 +11,14 @@
       <v-row>
         <v-col cols="1" class="d-flex justify-center align-center flex-column" style="height: fit-content;">
           <v-row class="ma-0">
-            <v-avatar color="surface" size="large" v-if="user.isAuth && user.name !== ''">
-              {{ user.name.split(' ')[0][0] + user.name.split('')[1][0] }}
-            </v-avatar>
+            <v-card rounded="pill" elevation="2">
+              <v-avatar color="surface" size="large" v-if="user.isAuth && user.name !== ''">
+                {{ user.name.split(' ')[0][0] + user.name.split('')[1][0] }}
+              </v-avatar>
+            </v-card>
           </v-row>
           <v-row class="ma-0 mt-5" v-if="hasMenu">
-            <v-card class="mx-auto" rounded="pill">
+            <v-card class="mx-auto" rounded="pill" elevation="2">
               <v-list density="compact" class="menu">
                 <v-list-item v-for="(item, i) in menu" :key="i" :value="item" color="primary" :to="item.path"
                   class="menu__item py-4 px-1 text-center">
@@ -36,7 +38,7 @@
 </template>
 
 <script setup>
-  import { ref, onMounted, watchEffect, watch } from "vue";
+  import { ref, watch } from "vue";
   import { useUserStore } from "./stores/user";
   import { useRouter } from "vue-router";
 
